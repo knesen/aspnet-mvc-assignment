@@ -1,23 +1,41 @@
 ﻿<!DOCTYPE html>
 <html lang="sv-se">
 
+@{
+    bool hideSocial = false;
+
+    if (Context.Request.Path.Value!.Equals("/account/signin") || Context.Request.Path.Value!.Equals("/account/signup"))
+    {
+        hideSocial = true;
+    }
+}
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0b081e6797.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    <title>@ViewData["Title"] - Silicon</title> 
+    @if (!string.IsNullOrWhiteSpace(ViewData["Title"]?.ToString()))
+    {
+        <title>@ViewData["Title"] - Silicon</title>
+    }
+    else
+    {
+        <title>Silicon</title>
+    }
+    
 </head>
 <body>
     <div class="wrapper">
         <header>
             <div class="container">
                 <a id="logo" asp-controller="Home" asp-action="Index"><img src="~/images/silicon-logo-light_theme-svg.svg" alt="" /></a>
-                <div id="menu">
+                <div id="menu" class="hide">
                     <nav>
-                        <a class="menu-link" href="#overview">Overview</a>
-                        <a class="menu-link" href="#features">Features</a>
+                        <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
+                        <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="features">Features</a>
                         <a class="menu-link" asp-controller="Contact" asp-action="Index">Contact</a>
                     </nav>
                 </div>
@@ -31,11 +49,12 @@
                     <label>Dark</label>
                 </div>
 
-                <div class="account-buttons">
-                    <a class="btn-gray" asp-controller="Account" asp-action="SignIn"><i class="fa-solid fa-right-to-bracket"></i><span>Sign In></span></a>
-                    <a class="btn-theme" asp-controller="Account" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
+                <div id="account-buttons" class="hide">
+                    <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-solid fa-right-to-bracket"></i><span>Sign In></span></a>
+                    <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
                 </div>
-                <button class="btn-mobilemenu">
+
+                <button onclick="toggleMenu()" class="btn-mobilemenu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -48,7 +67,9 @@
 
         <footer>
             <div class="container">
-                <div class="social-media">
+                @* @((ViewContext.RouteData.Values["Controller"]!.ToString() == "Auth") ? " d-none " : "social-media") *@
+               
+                <div class=" @(hideSocial ? "d-none social-media" : "social-media")">
                     <a class="btn-social" href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a class="btn-social" href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
                     <a class="btn-social" href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -61,6 +82,7 @@
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 
 </html>

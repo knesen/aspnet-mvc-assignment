@@ -15,7 +15,7 @@ public class HomeIndexViewModel
         BrandsText = "Largest companies use our tool to work efficiently",
         Brands =
                 [
-                    new() { ImageUrl = "~images/brands/brand_1.svg", AltText = "Brand Name 1"},
+                    new() { ImageUrl = "/images/brands/brand_1.svg", AltText = "Brand Name 1"},
                     new() { ImageUrl = "/images/brands/brand_2.svg", AltText = "Brand Name 2"},
                     new() { ImageUrl = "/images/brands/brand_3.svg", AltText = "Brand Name 3"},
                     new() { ImageUrl = "/images/brands/brand_4.svg", AltText = "Brand Name 4"},
