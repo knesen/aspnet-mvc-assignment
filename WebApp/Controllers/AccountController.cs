@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApp.Models.Sections;
 
 namespace WebApp.Controllers;
 
@@ -17,8 +18,17 @@ public class AccountController : Controller
     }
     public IActionResult SignUp()
     {
-        ViewData["Title"] = "Sign Up";
-        return View();
+        var viewModel = new SignupViewModel()
+        {
+            FirstName = "",
+            LastName = "",
+            Email = "",
+            Password = "",
+
+        };
+
+        ViewData["Title"] = viewModel.Title;
+        return View(viewModel);
     }
     public new IActionResult SignOut()
     {

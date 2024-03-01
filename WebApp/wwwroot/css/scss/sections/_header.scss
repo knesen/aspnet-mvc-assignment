@@ -24,8 +24,8 @@ header {
 
         #menu {
             grid-area: menu;
-            display: none;
-
+            /*display: none;*/
+           
             @include xl {
                 display: block;
             }
@@ -45,9 +45,9 @@ header {
             }
         }
 
-        .account-buttons {
+        #account-buttons {
             grid-area: buttons;
-            display: none;
+           /* display: none;*/
             gap: 15px;
 
             @include xl {
@@ -71,6 +71,13 @@ header {
             @include xl {
                 display: none;
             }
+        }
+
+        .hide {
+                        
+            display: none;
+
+            
         }
     }
 }
