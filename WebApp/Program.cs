@@ -15,3 +15,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+//Validering av formulär med Javascript och ModelState [ASP.NET Core]
+//52:23 / 2:05:03
