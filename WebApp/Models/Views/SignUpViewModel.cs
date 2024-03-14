@@ -1,4 +1,4 @@
-﻿using WebApp.Models.Sections;
+﻿using Infrastructure.Models;
 
 namespace WebApp.Models.Views;
 
