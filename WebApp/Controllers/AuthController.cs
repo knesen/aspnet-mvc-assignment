@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Services;
+using Microsoft.AspNetCore.Mvc;
 using WebApp.Models.Views;
 
 namespace WebApp.Controllers;
 
-public class AuthController : Controller
+public class AuthController(UserService userService) : Controller
 {
+    private readonly UserService _userService = userService;
+
     [Route("/signup")]
     [HttpGet] 
     public IActionResult SignUp()
@@ -15,14 +18,18 @@ public class AuthController : Controller
 
     [Route("/signup")]
     [HttpPost]
-    public IActionResult SignUp(SignUpViewModel viewModel)
+    public async Task<IActionResult> SignUp(SignUpViewModel viewModel)
     {
-        if (!ModelState.IsValid)
-            return View(viewModel);
-
-
-        return RedirectToAction("SignIn", "Auth"); ;
-                
+        if (ModelState.IsValid)
+        {
+            var result = await _userService.CreateUserAsync(viewModel.Form);
+            if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                return RedirectToAction("SignIn", "Auth");
+            
+        }
+       
+        return View(viewModel);             
+                                    
     }
 
     [Route("/signin")]
@@ -35,19 +42,19 @@ public class AuthController : Controller
 
     [Route("/signin")]
     [HttpPost]
-    public IActionResult SignIn(SignInViewModel viewModel)
+    public async Task<IActionResult> SignIn(SignInViewModel viewModel)
     {
 
-        if (!ModelState.IsValid)
-            return View(viewModel);
-        
+        if (ModelState.IsValid)
+        {
+            var result = await _userService.SignInUserAsync(viewModel.Form);
+            if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                return RedirectToAction("Details", "Account"); ;
 
-        //var result = _authService.SignIn(viewModel.Form);        
-        //if (result)
-        //    return RedirectToAction("Account", "Index"); ;
-
+        }
         viewModel.ErrorMessage = "Incorrect email or password";
         return View(viewModel);
+        
 
 
     }

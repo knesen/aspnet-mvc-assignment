@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models.Sections;
+namespace Infrastructure.Models;
 
 public class SignInModel
-{
+{    
     [DataType(DataType.EmailAddress)]
     [Display(Name = "Email address", Prompt = "Enter your email address", Order = 0)]
     [Required(ErrorMessage = "Email address is required")]
@@ -18,3 +18,5 @@ public class SignInModel
     [Display(Name = "Remember me", Order = 2)]
     public bool RememberMe { get; set; }
 }
+
+

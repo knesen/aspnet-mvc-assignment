@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
-using WebApp.Helpers;
+﻿using Infrastructure.Helpers;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models.Sections;
+namespace Infrastructure.Models;
 
 public class SignUpModel
 {
@@ -34,7 +33,7 @@ public class SignUpModel
     //[RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{8,15}$", ErrorMessage = "Password (8-15 characters) must contain one the following: Uppercase letter, lowercase letter, number and special character.")]
     public string Password { get; set; } = null!;
 
-    
+
     [Display(Name = "Confirm password", Prompt = "Confirm your password", Order = 4)]
     [DataType(DataType.Password)]
     [Required(ErrorMessage = "Password must be confirmed")]
@@ -44,6 +43,4 @@ public class SignUpModel
     [Display(Name = "I agree to the terms & conditions", Order = 5)]
     [CheckBoxRequired(ErrorMessage = "You must agree to the terms & conditions")]
     public bool TermsAndConditions { get; set; } = false;
-
 }
-
