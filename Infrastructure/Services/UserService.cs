@@ -46,6 +46,7 @@ public class UserService(UserRepository repository, AddressService addressServic
 
                 if (PasswordHasher.ValidateSecurePassword(model.Password, userEntity.Password, userEntity.SecurityKey))
                     return ResponseFactory.Ok();
+                    
             }            
 
             return ResponseFactory.Error("Incorrect email or password");

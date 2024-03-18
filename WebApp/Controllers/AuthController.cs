@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models.Views;
 
@@ -57,5 +58,12 @@ public class AuthController(UserService userService) : Controller
         
 
 
+    }
+
+    [HttpGet]
+    public new async Task<IActionResult> SignOut()
+    {
+        await HttpContext.SignOutAsync();
+        return RedirectToAction("Index", "Account");
     }
 }
