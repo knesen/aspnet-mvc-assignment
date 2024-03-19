@@ -1007,3 +1007,30 @@ footer .container .social-media {
   left: -30px;
   z-index: 2;
 }
+
+#manage {
+  padding-top: 100px;
+}
+#manage .container {
+  display: flex;
+  align-items: center;
+}
+#manage .container .manage-left {
+  flex: 1;
+}
+#manage .container .manage-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  gap: 10px;
+}
+#manage .container .manage-right #list-item {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+#manage .container .manage-right a {
+  margin-top: 30px;
+  width: 40%;
+}

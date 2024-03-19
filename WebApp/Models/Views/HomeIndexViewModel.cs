@@ -48,4 +48,20 @@ public class HomeIndexViewModel
             ]
     };
 
+    public ManageViewModel Manage { get; set; } = new ManageViewModel
+    {
+        Id = "manage",
+        Title = "Manage Your Work",
+        Image = new() { ImageUrl = "images/manage.svg", AltText = "An example of our task master feature" },      
+        Link = new() { ControllerName = "Downloads", ActionName = "Index", Text = "Learn more" },
+        List = 
+            [
+                new () { Icon = "images/icons/checkmark.svg", Text = "Powerful project management"},
+                new () { Icon = "images/icons/checkmark.svg", Text = "Transparent work management"},
+                new () { Icon = "images/icons/checkmark.svg", Text = "Manage work & focus on the most important tasks"},
+                new () { Icon = "images/icons/checkmark.svg", Text = "Track your progress with interactive charts"},
+                new () { Icon = "images/icons/checkmark.svg", Text = "Easiest way to track time spent on tasks"}
+            ]
+    };
+
 }
