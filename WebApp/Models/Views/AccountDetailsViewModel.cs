@@ -1,4 +1,5 @@
-﻿using WebApp.Models.Sections;
+﻿using Infrastructure.Entities;
+using WebApp.Models.Sections;
 
 namespace WebApp.Models.Views;
 

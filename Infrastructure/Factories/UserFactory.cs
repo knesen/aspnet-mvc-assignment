@@ -28,7 +28,7 @@ public class UserFactory
         try
         {
             var date = DateTime.Now;
-            var (password, securityKey) = PasswordHasher.GenerateSecurePassword(model.Password);
+            var (securityKey, password) = PasswordHasher.GenerateSecurePassword(model.Password);
 
             return new UserEntity 
             { 

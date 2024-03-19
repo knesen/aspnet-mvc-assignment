@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApp.Models.Sections;
 using WebApp.Models.Views;
 
@@ -12,7 +13,7 @@ public class AccountController : Controller
     //   {
     //       _accountService = accountService;
     //   }
-
+    [Authorize]
     [Route("/account")]
     public IActionResult Details()
     {

@@ -1,5 +1,7 @@
 ﻿using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WebApp.Models.Views;
 
 namespace WebApp.Controllers;
@@ -49,6 +51,15 @@ public class AuthController(UserService userService) : Controller
         {
             var result = await _userService.SignInUserAsync(viewModel.Form);
             if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+            {
+                var claims = new List<Claim>
+                {
+                    new(ClaimTypes.NameIdentifier, viewModel.Form.Email),
+                    new(ClaimTypes.Name, viewModel.Form.Email),
+                    new(ClaimTypes.Email, viewModel.Form.Email)
+                };
+                await HttpContext.SignInAsync("AuthCookie", new ClaimsPrincipal(new ClaimsIdentity(claims, "AuthCookie")));
+            }
                 return RedirectToAction("Details", "Account"); ;
 
         }
@@ -57,5 +68,12 @@ public class AuthController(UserService userService) : Controller
         
 
 
+    }
+
+    [HttpGet]
+    public new async Task<IActionResult> SignOut()
+    {
+        await HttpContext.SignOutAsync();
+        return RedirectToAction("Index", "Account");
     }
 }
