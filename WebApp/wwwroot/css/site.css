@@ -1034,3 +1034,44 @@ footer .container .social-media {
   margin-top: 30px;
   width: 40%;
 }
+
+#testimonials {
+  padding-top: 100px;
+  background-color: #F3F6FF;
+  padding-bottom: 80px;
+}
+#testimonials .container {
+  display: flex;
+  align-items: center;
+}
+#testimonials .container .testimonials-left {
+  flex: 1;
+}
+#testimonials .container .testimonials-right {
+  flex: 1;
+  display: flex;
+  margin-left: 60px;
+  gap: 10px;
+  flex-direction: column;
+}
+#testimonials .container .testimonials-right h1 {
+  width: 60%;
+  justify-content: start;
+}
+#testimonials .container .testimonials-right .testimonial-item {
+  display: flex;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  width: 80%;
+}
+#testimonials .container .testimonials-right .testimonial-item .testimonial-item-content {
+  flex-direction: column;
+}
+#testimonials .container .testimonials-right .testimonial-item .testimonial-item-content .rating-icon {
+  width: 40%;
+}
+#testimonials .container .testimonials-right .testimonial-item .testimonial-link {
+  margin-left: 20px;
+}

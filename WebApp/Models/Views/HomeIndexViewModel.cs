@@ -1,4 +1,5 @@
-﻿using WebApp.Models.Sections;
+﻿using System.Numerics;
+using WebApp.Models.Sections;
 
 namespace WebApp.Models.Views;
 
@@ -63,5 +64,18 @@ public class HomeIndexViewModel
                 new () { Icon = "images/icons/checkmark.svg", Text = "Easiest way to track time spent on tasks"}
             ]
     };
+
+    public TestimonialsViewModel Testimonials { get; set; } = new TestimonialsViewModel
+    {
+        Id = "testimonials",
+        Title = "Download Our App for Any Devices:",
+        Image = new() { ImageUrl = "images/screens.svg", AltText = "Phones showing our app in use" },
+        Items =
+        [
+                new () { Vendor = "App Store", RatingIcon = "images/icons/rating.svg", Flair = "Editor's Choice", RatingText = "rating 4.7, 187K+ reviews", VendorButtonImage = new() { ImageUrl = "images/brands/appstore.svg", AltText = "App store button" } },
+                new () { Vendor = "Google Play", RatingIcon = "images/icons/rating.svg", Flair = "App of the Day", RatingText = "rating 4.8, 30K+ reviews", VendorButtonImage = new() { ImageUrl = "images/brands/googleplay.svg", AltText = "Google play button" } }
+            ]
+    };
+    
 
 }
