@@ -76,6 +76,48 @@ public class HomeIndexViewModel
                 new () { Vendor = "Google Play", RatingIcon = "images/icons/rating.svg", Flair = "App of the Day", RatingText = "rating 4.8, 30K+ reviews", VendorButtonImage = new() { ImageUrl = "images/brands/googleplay.svg", AltText = "Google play button" } }
             ]
     };
-    
+
+    public ToolsViewModel Tools { get; set; } = new ToolsViewModel
+    {
+        Id = "tools",
+        Title = "Integrate Top Work Tools",
+        Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.",
+        List =
+            [
+                new () { Icon = "images/tools/google.svg", Text = "Lorem magnis pretium sed curabitur nunc facilisi nunc cursus sagittis.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/zoom.svg", Text = "In eget a mauris quis. Tortor dui tempus quis integer est sit natoque placerat dolor.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/slack.svg", Text = "Id mollis consectetur congue egestas egestas suspendisse blandit justo.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/gmail.svg", Text = "Rutrum interdum tortor, sed at nulla. A cursus bibendum elit purus cras praesent.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/trello.svg", Text = "Congue pellentesque amet, viverra curabitur quam diam scelerisque fermentum urna.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/mailchimp.svg", Text = "A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/dropbox.svg", Text = "Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea.", Link = {ControllerName = "", ActionName = "", Text = ""}},
+                new () { Icon = "images/tools/evernote.svg", Text = "Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu.", Link = {ControllerName = "", ActionName = "", Text = ""}}
+            ]
+    };
+
+    public SubscribeViewModel Subscribe { get; set; } = new SubscribeViewModel
+    {
+        Id = "subscribe",
+        Title = "Don't Want to Miss Anything?",
+        SubTitle = "Sign up for Newsletters",
+        Email = "",
+        Image = new (){ ImageUrl = "images/arrows.svg", AltText = "Swirly arrow"},
+        Subscribe = 
+            [
+                new () { Icon = "images/", Text = "Daily Newsletter" },
+                new () { Icon = "images/", Text = "Advertising Updates" },
+                new () { Icon = "images/", Text = "Week in Review" },
+                new () { Icon = "images/", Text = "Event Updates" },
+                new () { Icon = "images/", Text = "Startups Weekly" },
+                new () { Icon = "images/", Text = "Podcasts" }
+            ],
+        TermsText = "* Yes, I agree to the  and .",
+        Terms = 
+            [
+                new () { ActionName = "", ControllerName = "", Text = "terms"},
+                new () { ActionName = "", ControllerName = "", Text = "privacy policy"}
+            ]
+
+    };
 
 }

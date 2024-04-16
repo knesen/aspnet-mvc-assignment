@@ -1,0 +1,26 @@
+﻿@model SubscribeViewModel
+
+<section id="@Model.Id">
+    <div class="container">
+        <div class="subscribe-title">
+            <h1>@Model.Title</h1>
+            <img src="@Model.Image.ImageUrl" alt="@Model.Image.AltText" />
+        </div>
+        <div class="subscribe-options">
+            <h4>@Model.SubTitle</h4>
+            <form>
+
+            @if(Model.Subscribe != null)
+            {
+                foreach (var item in Model.Subscribe)
+                {
+                    <input type="checkbox" />
+                    <div>@item.Text</div>
+                }
+            }
+            <button id="form-submit" class="btn-theme" type="submit">Subscribe *</button>
+            </form>
+        </div>
+
+    </div>
+</section>

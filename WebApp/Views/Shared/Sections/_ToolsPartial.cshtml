@@ -1,0 +1,19 @@
+﻿@model ToolsViewModel
+
+<section id="@Model.Id">
+    <h1>@Model.Title</h1>
+    <p>@Model.Text</p>
+    <div class="container">
+        @if(Model.List != null)
+        {
+            foreach(var item in Model.List)
+            {
+                <div class="box">
+                    <img src="@item.Icon" />
+                    <p>@item.Text</p>
+                </div>
+
+            }
+        }
+    </div>
+</section>
