@@ -1,0 +1,26 @@
+﻿@model ManageViewModel
+
+<section id="@Model.Id">
+    <div class="container">
+
+        <div class="manage-left">
+            <img src="@Model.Image.ImageUrl" alt="@Model.Image.AltText"/>
+        </div>
+        <div class="manage-right">
+            <h1>@Model.Title</h1>
+            @if(Model.List != null)
+            {
+                foreach(var item in Model.List)
+                {
+                    <div id="list-item">
+                        <img src="@item.Icon" />
+                        <div>@item.Text</div>
+                    </div>
+                }
+            }
+            <a class="btn-theme-s" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">@Model.Link.Text</a>
+        </div>
+   
+    </div>
+
+</section>

@@ -1,0 +1,30 @@
+﻿@model TestimonialsViewModel
+
+<section id="@Model.Id">
+    <div class="container">
+        <div class="testimonials-left">
+            <img src="@Model.Image.ImageUrl" alt="@Model.Image.AltText" />
+        </div>
+        <div class="testimonials-right">
+            <h1>@Model.Title</h1>
+            @if(Model.Items != null)
+            {
+                foreach(var item in Model.Items)
+                {
+                    <div class="testimonial-item">
+                        <div class="testimonial-item-content">
+                            <div>@item.Vendor</div>
+                            <img class="rating-icon" src="@item.RatingIcon" />
+                            <h4>@item.Flair</h4>
+                            <div>@item.RatingText</div>                    
+                        </div>                        
+                            <a class="testimonial-link" href="">
+                            <img src="@item.VendorButtonImage.ImageUrl" alt="@item.VendorButtonImage.AltText" />
+                        </a>
+                        
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
