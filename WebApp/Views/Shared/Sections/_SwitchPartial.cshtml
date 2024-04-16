@@ -1,0 +1,14 @@
+﻿@model SwitchViewModel
+
+<section id="@Model.Id" class="switch">
+    <div class="switch-left">
+        <h1>@Model.Title.Substring(0, Math.Min(Model.Title.Length, 14))</h1>
+        <image id="switch-image-left" src="@Model.DarkSwitchImage.ImageUrl" alt="@Model.DarkSwitchImage.AltText"></image>
+    </div>
+    <div class="switch-right">
+        <h1>@Model.Title.Substring(15)</h1>
+        <image id="switch-image-right" src="@Model.LightSwitchImage.ImageUrl" alt="@Model.LightSwitchImage.AltText"></image>
+    <img id="switch-icon" src="@Model.Icon" />
+    </div>   
+    
+</section>

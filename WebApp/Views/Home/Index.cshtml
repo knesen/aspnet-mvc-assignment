@@ -3,10 +3,18 @@
 @await Html.PartialAsync("~/Views/Shared/Sections/_ShowcasePartial.cshtml", Model.Showcase)
 
 
-<section id="features">
-    @await Html.PartialAsync("~/Views/Shared/Sections/_FeaturesPartial.cshtml")
-</section>
+@await Html.PartialAsync("~/Views/Shared/Sections/_FeaturesPartial.cshtml", Model.Features)
 
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_SwitchPartial.cshtml", Model.Switch)
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_ManagePartial.cshtml", Model.Manage)
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_TestimonialsPartial.cshtml", Model.Testimonials)
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_ToolsPartial.cshtml", Model.Tools)
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_SubscribePartial.cshtml", Model.Subscribe)
 
 @* Alternativt sätt *@
 @* <partial name="~/Views/Shared/Sections/_ShowcasePartial.cshtml" />
