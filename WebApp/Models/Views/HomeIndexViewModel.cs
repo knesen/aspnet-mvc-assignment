@@ -100,7 +100,8 @@ public class HomeIndexViewModel
         Id = "subscribe",
         Title = "Don't Want to Miss Anything?",
         SubTitle = "Sign up for Newsletters",
-        Email = "",
+        //Subscriber = {},
+        //Email = "",
         Image = new (){ ImageUrl = "images/arrows.svg", AltText = "Swirly arrow"},
         Subscribe = 
             [
