@@ -9,10 +9,7 @@ public class SubscribeViewModel
     public string? Title { get; set; }
     public string? SubTitle { get; set; }
 
-
-    [DataType(DataType.EmailAddress)]
-    [Display(Name = "Email address", Prompt = "Your Email")]
-    public string? Email {  get; set; }
+    public SubscriberModel Subscriber { get; set; } = null!;
 
     public ImageViewModel? Image { get; set; }
     public List<ItemListViewModel>? Subscribe { get; set; }
