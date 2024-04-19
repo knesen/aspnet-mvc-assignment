@@ -1,0 +1,46 @@
+#tools {
+    background: var(--color-gray-000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    p {
+        text-align: center;
+        width: 37%;
+        margin-bottom: 50px;
+        color: var(--color-gray-600);
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .box {
+            padding: 20px;
+            transition: all 0.15s ease-in-out;
+            width: 25%;
+
+            img {
+                margin-bottom: 20px;
+            }
+
+            &:hover {
+                transition: all 0.15s ease-in-out;
+                cursor: pointer;
+                background: var(--color-gray-300);
+                @include shadow-m;
+            }
+
+            p {
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                color: var(--color-gray-700);
+            }
+        }
+    }
+}

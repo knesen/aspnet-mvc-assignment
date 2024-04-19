@@ -1,0 +1,40 @@
+﻿@model CoursesViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section id="@Model.Id">
+    <div class="container">
+        <div class="content">
+            <h1>@Model.Title</h1>
+            <div class="courses">
+                @if (Model.Courses != null)
+                {
+                    foreach (var course in Model.Courses)
+                    {
+                        <a asp-controller="@course.Link.ControllerName" asp-action="@course.Link.ActionName">
+                            
+                        <img src="@course.ImageName" alt="@course.Title">
+                        <p>@course.Title</p>
+                        <p>@course.Author</p>
+                        @if (course.DiscountPrice == 0)
+                        {
+                            <div>@course.OriginalPrice</div>
+                        }
+                        else
+                        {
+                            <div>@course.DiscountPrice</div>
+                            <div>@course.OriginalPrice</div>
+                        }
+                        <div>@course.Hours</div>
+                        <div>
+                            <div>@course.LikesInPercent</div>
+                            <div>@course.LikesInNumbers</div>
+                        </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>

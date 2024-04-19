@@ -25,7 +25,20 @@ h5, .h5 { @include h5; }
 h6, .h6 { @include h6; }
 
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
