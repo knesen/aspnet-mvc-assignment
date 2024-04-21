@@ -5,52 +5,16 @@
     <div class="container">
         <div class="subscribe-title">
             <h1>@Model.Title</h1>
-            <img src="@Model.Image!.ImageUrl" alt="@Model.Image.AltText" />
+            <img src="@Model.Image.ImageUrl" alt="@Model.Image.AltText" />
         </div>
+        <div class="subscribe-options">
+            <h4>@Model.SubTitle</h4>
             <form asp-action="Index" asp-controller="Subscribe" method="post">
-                <h4>@Model.SubTitle</h4>
-                @* <div class="subscribe-options">
-                    <div class="checkbox-group">
-                        <div class="input-group">
-                            <input asp-for="@Model.Subscriber.DailyNewsletter"/>
-                        <label asp-for="@Model.Subscriber.DailyNewsletter"></label>
-                        </div>
-                        <div class="input-group">
-                        <input asp-for="@Model.Subscriber.AdvertisingUpdates" />
-                        <label asp-for="@Model.Subscriber.AdvertisingUpdates"></label>
-                        </div>
-                        <div class="input-group">
-                        <input asp-for="@Model.Subscriber.WeekinReview" />
-                        <label asp-for="@Model.Subscriber.WeekinReview"></label>
-                        </div>
-                        <div class="input-group">
-                        <input asp-for="@Model.Subscriber.EventUpdates" />
-                        <label asp-for="@Model.Subscriber.EventUpdates"></label>
-                        </div>
-                        <div class="input-group">
-                        <input asp-for="@Model.Subscriber.StartupsWeekly" />
-                        <label asp-for="@Model.Subscriber.StartupsWeekly"></label>
-                        </div>
-                        <div class="input-group">
-                        <input asp-for="@Model.Subscriber.Podcasts" />
-                        <label asp-for="@Model.Subscriber.Podcasts"></label>
-                        </div>
-                    </div>               
-                </div> *@
-                <div class="form-email">
-                    <div class="input-group">
-                        <i class="fa-regular fa-envelope"></i>
-                        <input asp-for="@Model.Subscriber.Email"/>
+                <input asp-for="@Model.Subscriber.Email" />
 
-                    </div>
-                    <button id="form-submit" class="btn btn-theme" type="submit">Subscribe *</button>
-                </div>   
-            @if (TempData["StatusMessage"] != null)
-            {
-                <div class="alert alert-warning">@TempData["StatusMessage"]</div>
-            }
-            
+                <button id="form-submit" class="btn-theme" type="submit">Subscribe *</button>
             </form>
         </div>
 
+    </div>
 </section>
