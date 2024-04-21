@@ -20,7 +20,7 @@ public class SubscribeController : Controller
             using var http = new HttpClient();
 
             var url = $"https://localhost:7275/api/subscribers?email={viewModel.Subscriber.Email}";
-            var request = new HttpRequestMessage(HttpMethod.Post, url) ;
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
 
             var response = await http.SendAsync(request);
 
@@ -30,6 +30,6 @@ public class SubscribeController : Controller
             }
         }
 
-        return View(viewModel);
+        return RedirectToAction("Index", "Home", "subscribe");
     }
 }

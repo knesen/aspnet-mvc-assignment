@@ -5,7 +5,7 @@ namespace WebApp.Models.Sections;
 
 public class SubscribeViewModel
 {
-    public string? Id {  get; set; }
+    public string? Id { get; set; }
     public string? Title { get; set; }
     public string? SubTitle { get; set; }
 

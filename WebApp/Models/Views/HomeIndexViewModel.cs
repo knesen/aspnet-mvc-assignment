@@ -100,18 +100,8 @@ public class HomeIndexViewModel
         Id = "subscribe",
         Title = "Don't Want to Miss Anything?",
         SubTitle = "Sign up for Newsletters",
-        //Subscriber = {},
-        //Email = "",
         Image = new (){ ImageUrl = "images/arrows.svg", AltText = "Swirly arrow"},
-        Subscribe = 
-            [
-                new () { Icon = "images/", Text = "Daily Newsletter" },
-                new () { Icon = "images/", Text = "Advertising Updates" },
-                new () { Icon = "images/", Text = "Week in Review" },
-                new () { Icon = "images/", Text = "Event Updates" },
-                new () { Icon = "images/", Text = "Startups Weekly" },
-                new () { Icon = "images/", Text = "Podcasts" }
-            ],
+        
         TermsText = "* Yes, I agree to the  and .",
         Terms = 
             [

@@ -10,16 +10,9 @@
         <div class="subscribe-options">
             <h4>@Model.SubTitle</h4>
             <form asp-action="Index" asp-controller="Subscribe" method="post">
-                <input asp-for="@Model.Subscriber.Email"/>
-            @* @if(Model.Subscribe != null)
-            {
-                foreach (var item in Model.Subscribe)
-                {
-                    <input type="checkbox" />
-                    <div>@item.Text</div>
-                }
-            } *@
-            <button id="form-submit" class="btn-theme" type="submit">Subscribe *</button>
+                <input asp-for="@Model.Subscriber.Email" />
+
+                <button id="form-submit" class="btn-theme" type="submit">Subscribe *</button>
             </form>
         </div>
 
