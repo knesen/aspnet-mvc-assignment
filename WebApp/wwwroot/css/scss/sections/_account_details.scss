@@ -1,5 +1,7 @@
-#account-details {
+body {
     background: var(--color-gray-000);
+    }
+#account-details {
     display: grid;
     grid-template-columns: 2fr 5fr;
     gap: 150px;
@@ -12,6 +14,19 @@
         .profile-info {
             margin: 20px;
             text-align: center;
+
+            .profile-image {
+
+                .btn-gray{
+
+                }
+                img {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
 
             h5 {
                 margin-top: 15px;

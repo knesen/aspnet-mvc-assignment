@@ -7,31 +7,42 @@
     <div class="container">
         <div class="content">
             <h1>@Model.Title</h1>
-            <div class="courses">
+            <div class="courses-list">
                 @if (Model.Courses != null)
                 {
                     foreach (var course in Model.Courses)
                     {
-                        <a asp-controller="@course.Link.ControllerName" asp-action="@course.Link.ActionName">
-                            
-                        <img src="@course.ImageName" alt="@course.Title">
-                        <p>@course.Title</p>
-                        <p>@course.Author</p>
-                        @if (course.DiscountPrice == 0)
-                        {
-                            <div>@course.OriginalPrice</div>
-                        }
-                        else
-                        {
-                            <div>@course.DiscountPrice</div>
-                            <div>@course.OriginalPrice</div>
-                        }
-                        <div>@course.Hours</div>
-                        <div>
-                            <div>@course.LikesInPercent</div>
-                            <div>@course.LikesInNumbers</div>
+                        <div class="box"> 
+                            <a asp-controller="@course.Link.ControllerName" asp-action="@course.Link.ActionName">
+                                @if (course.IsBestseller)
+                                {
+                                    <div class="bestseller">Best Seller</div>
+                                }
+                                
+                                <button class="btn btn-circle"><i class="fa-regular fa-bookmark"></i></button>
+
+                                <img src="@course.ImageName" alt="@course.Title">
+                                <h5>@course.Title</h5>
+                                <div>By @course.Author</div>
+                                @if (course.DiscountPrice == 0)
+                                {
+                                    <div class="normal-price">$@course.OriginalPrice</div>
+                                }
+                                else
+                                {
+                                    <div class="discount-price">$@course.DiscountPrice</div>
+                                    <del>$@course.OriginalPrice</del>
+                                }
+                                <hr />
+                                <div class="course-bottom">
+                                    <div><i class="fa-regular fa-clock"></i>@course.Hours</div>
+                                    <div>
+                                        <div><i class="fa-regular fa-thumbs-up"></i>@course.LikesInPercent (@course.LikesInNumbers)</div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                </a>
                         </div>
-                        </a>
                     }
                 }
             </div>

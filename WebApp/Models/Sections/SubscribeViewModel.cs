@@ -12,8 +12,9 @@ public class SubscribeViewModel
     public SubscriberModel Subscriber { get; set; } = null!;
 
     public ImageViewModel? Image { get; set; }
-    public List<ItemListViewModel>? Subscribe { get; set; }
     public string? TermsText { get; set; }
     public List<LinkViewModel>? Terms { get; set; }
+    
+
 
 }

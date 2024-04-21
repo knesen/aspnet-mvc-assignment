@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WebApp.Models.Components;
 using WebApp.Models.Views;
 
 namespace WebApp.Controllers;
 
+[Authorize]
 public class CoursesController : Controller
 {
     [Route("/courses")]

@@ -6,10 +6,13 @@
 
 <section id="signin">
     <div class="container">
-        <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
-            <div>
-                @Model.ErrorMessage
-            </div>
+            @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+            {
+            <div class="alert alert-danger">
+                @ViewData["StatusMessage"]
+            </div>                
+            }
+        <form method="post" asp-controller="Auth" asp-action="SignIn" asp-route-ReturnUrl="@ViewData["ReturnUrl"]" novalidate>
             <h1>Welcome Back</h1>
             <p>Don't have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
             <div class="content">                
