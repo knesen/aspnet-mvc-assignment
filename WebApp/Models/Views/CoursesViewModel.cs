@@ -16,12 +16,7 @@ public class CoursesViewModel
 
     public IEnumerable<CourseModel>? Courses { get; set; }
         
-        //[
-        //    new () {Id = "", Title = "", ImageName = "", Author = "", IsBestseller = false, Hours = 0, OriginalPrice = 0, DiscountPrice = 0, LikesInPercent = 0, LikesInNumbers = 0,
-
-        //    Link = new() {  ControllerName = "", ActionName = "", Text = ""} }     
-        //];
-    
+        
 
     
 

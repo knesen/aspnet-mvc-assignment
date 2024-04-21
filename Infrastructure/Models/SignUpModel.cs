@@ -21,8 +21,7 @@ public class SignUpModel
     [DataType(DataType.EmailAddress)]
     [Display(Name = "Email address", Prompt = "Enter your email address", Order = 2)]
     [Required(ErrorMessage = "Email address is required")]
-    //[RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage = "Email address is not valid")]
-    // old regex = \\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*
+   
 
     public string Email { get; set; } = null!;
 
@@ -30,7 +29,7 @@ public class SignUpModel
     [Display(Name = "Password", Prompt = "Enter your password", Order = 3)]
     [DataType(DataType.Password)]
     [Required(ErrorMessage = "Password is required")]
-    //[RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{8,15}$", ErrorMessage = "Password (8-15 characters) must contain one the following: Uppercase letter, lowercase letter, number and special character.")]
+    
     public string Password { get; set; } = null!;
 
 

@@ -102,12 +102,6 @@ public class HomeIndexViewModel
         SubTitle = "Sign up for Newsletters",
         Image = new (){ ImageUrl = "images/arrows.svg", AltText = "Swirly arrow"},
         
-        TermsText = "* Yes, I agree to the  and .",
-        Terms = 
-            [
-                new () { ActionName = "", ControllerName = "", Text = "terms"},
-                new () { ActionName = "", ControllerName = "", Text = "privacy policy"}
-            ]
 
     };
 

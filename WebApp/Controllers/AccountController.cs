@@ -54,14 +54,7 @@ public class AccountController(UserManager<UserEntity> userManager, DataContext 
     [HttpPost]
     public async Task<IActionResult> BasicInfo(AccountDetailsViewModel viewModel)
     {
-        //viewModel.AddressInfo.PostalCode = "PH";
-        //viewModel.AddressInfo.City = "PH";
-        //viewModel.AddressInfo.Addressline_1 = "PH";
-                
-                
-
-        //Modellen är inte valid pga addressinfo (saknas men är required?)
-        //if (TryValidateModel(viewModel.BasicInfo!))
+        
         if (viewModel != null)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -94,7 +87,7 @@ public class AccountController(UserManager<UserEntity> userManager, DataContext 
             {
                 foreach (var error in entry.Value.Errors)
                 {
-                    // Log or print the error messages associated with each property
+                    
                     var errorMessage = error.ErrorMessage;
                     var propertyName = entry.Key;
                     Console.WriteLine($"Validation error for property '{propertyName}': {errorMessage}");

@@ -1,24 +1,15 @@
 using Infrastructure.Contexts;
 using Infrastructure.Entities;
-using Infrastructure.Repositories;
-using Infrastructure.Services;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebApp.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRouting(x => x.LowercaseUrls = true);
 
-//builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
-//{
-//    x.LoginPath = "/signin"; //"/auth/signin"
-//    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-//});
-//builder.Services.AddScoped<AddressRepository>();
-//builder.Services.AddScoped<UserRepository>();
-//builder.Services.AddScoped<AddressService>();
-//builder.Services.AddScoped<UserService>();
+
 
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
